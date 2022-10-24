@@ -1,23 +1,46 @@
 import os
+import random
 
-import discord
+from discord.ext import commands
 from dotenv import load_dotenv
+import discord
 
+# load the .env file from your root DIR
 load_dotenv()
+
+# gets the Bot token from the env file
 TOKEN = os.getenv('DISCORD_TOKEN')
-GUILD = os.getenv('DISCORD_GUILD')
 
-client = discord.Client(intents=discord.Intents.default())
+# sets the bot as a client with a prefix, and intents to check on all channels
+# """
+# param: command_prefix
+# type: string
+# description: set the command prefix for Discord messages
+# param: intents
+# type: event
+# description: sets intents. Read more on intents here: https://discordpy.readthedocs.io/en/stable/intents.html
+# """
+bot = commands.Bot(command_prefix='^', intents = discord.Intents.all())
 
-@client.event
-async def on_ready():
-    for guild in client.guilds:
-        if guild.name == GUILD:
-            break
+# checks for certain messages and has a 'help' response
+# """
+# param: name
+# type: string
+# description: set the message to which the bot has to look for
+# param: help
+# type: string
+# description: if {prefix}+{help} is called, responds with whatever is in the parameter
+# """
+@bot.command(name='terrible', help='Responds with (=3=) turrible ...')
+async def nine_nine(ctx):
+    # list of responses, separated by a comma
+    responseList = [
+        '(=3=) turrible ...',
+    ]
 
-    print(
-        f'{client.user} is connected to the following guild:\n'
-        f'{guild.name}(id: {guild.id})'
-    )
+    # sends a response
+    response = random.choice(responseList)
+    await ctx.send(response)
 
-client.run(TOKEN)
+# runs the program on ~py bot.py
+bot.run(TOKEN)
