@@ -5,6 +5,7 @@ A discord bot written in Python
 * Create a virtual environment by typing: `py -m venv .venv` in the terminal
 * Go into the venv by typing: `.\.venv\Scripts\activate`
 * Install required modules by typing: `pip install -r requirements.txt`
+<br>
 ... et voilà
 <br>
 Now you can run the program by typing `py bot.py` in the terminal
