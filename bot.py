@@ -32,7 +32,7 @@ bot = commands.Bot(command_prefix='^', intents = discord.Intents.all())
 # description: if {prefix}+{help} is called, responds with whatever is in the parameter
 # """
 @bot.command(name='terrible', help='Responds with (=3=) turrible ...')
-async def nine_nine(ctx):
+async def on_message(ctx):
     # list of responses, separated by a comma
     responseList = [
         '(=3=) turrible ...',
