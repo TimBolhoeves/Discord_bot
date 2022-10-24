@@ -7,7 +7,7 @@ A discord bot written in Python
 * Install required modules by typing: `pip install -r requirements.txt`
 <br>
 ... et voilà
-<br>
+<br> <br>
 Now you can run the program by typing `py bot.py` in the terminal
 <br>
 ..or...
