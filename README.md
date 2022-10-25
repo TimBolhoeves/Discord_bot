@@ -8,6 +8,7 @@ A discord bot written in Python
 * Fill the `.env` file you just created with your *discord bot token*
 * Activate the virtual environment by typing: `.\venv_yourVenv\Scripts\activate` in the terminal
 \
+\
 ... et voilà
 
 ## 🔨 Keep it updated
