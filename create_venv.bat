@@ -1,5 +1,8 @@
+@echo off
 :: This batch file is for generating the Python virtual working environment for the given project
 set application_name=%1
+
+if "%1" == "" goto :byebye
 
 :: (Re)create the virtual environment
 echo (Re)creating virtual environment for project: %1
@@ -19,8 +22,19 @@ echo Installing required Python libraries
 .\venv_%application_name%\Scripts\pip.exe install -r .\requirements.txt
 
 echo Creating .env file
-type nul > .env
+py .\createEnv.py
 
 :ready
 echo Virtual environment for project '%application_name%' ready for use
 goto :EOF
+
+:byebye
+echo. 
+echo ==========================================
+echo Please provide the following arguments:
+echo - venv name, e.g. discord_bot
+echo.
+echo Example:
+echo $ .\create_venv.bat "discord_bot"
+echo ==========================================
+echo.
