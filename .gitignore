@@ -1,2 +1,6 @@
 .env
 .venv
+venv
+venv_
+_venv
+/venv_discord_bot
