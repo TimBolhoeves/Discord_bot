@@ -9,3 +9,6 @@ Include
 Scripts
 pyvenv.cfg
 .github
+/CODE_OF_CONDUCT.md
+/CONTRIBUTING.md
+/LICENSE
