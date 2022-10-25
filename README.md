@@ -2,8 +2,8 @@
 A discord bot written in Python
 
 # ⚙️ Installation
-* Run create_venv script in the terminal by typing: `.\create_venv.bat "nameYouWant"`
-* Fill the `.env` file you just created with your bot token
+* Run `create_venv.bat` script in the terminal by typing: `.\create_venv.bat "nameYouWant"`
+* Fill the `.env` file you just created with your *discord bot token*
 * Activate the virtual environment by typing: `.\venv_yourVenv\Scripts\activate` in the terminal
 <br>
 ... et voilà
