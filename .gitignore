@@ -4,3 +4,7 @@ venv
 venv_
 _venv
 /venv_discord_bot
+Lib
+Include
+Scripts
+pyvenv.cfg
