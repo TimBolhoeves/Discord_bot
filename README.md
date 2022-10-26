@@ -13,7 +13,7 @@ A discord bot written in Python
 
 ## 🔨 Keep it updated
 
-To ensure your library requirements are up to date with the rest of the people working on the project, it is recommended you run `reqs_install.bat` whenever you **pull**, and `reqs_freeze.bat` whenever you **push** (pushing can be done using the `pushgit.bat` script, read: **🚀 Push to Github**)
+To ensure your library requirements are up to date with the rest of the people working on the project, it is recommended you run `pip freeze > requirements.txt` whenever you **pull**, and `reqs_freeze.bat` whenever you **push** (pushing can be done using the `pushgit.bat` script, read: **🚀 Push to Github**)
 
 ## 🏃 Running the program
 
