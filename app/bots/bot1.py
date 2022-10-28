@@ -43,4 +43,5 @@ async def on_message(ctx):
     await ctx.send(response)
 
 # runs the program on ~py bot.py
-bot.run(TOKEN)
+def runBot():
+    bot.run(TOKEN)

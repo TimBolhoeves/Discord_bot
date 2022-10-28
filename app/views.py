@@ -32,7 +32,8 @@ def index(request):
         
 #         if boolean == True:
 #             # Zet de bot aan (code van bot.py)
-#             return ""
+              #messages.info(request, 'Bot is aangezet')
+#             return void
 #         else:
 #             # Zet bot uit
 
