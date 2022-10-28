@@ -8,6 +8,6 @@ urlpatterns = [
     # Auth
     path('login/', views.login, name='login'),
     path('login/post/', views.loginpost, name='loginpost'),
-    path('logout/', views.logout, name='logout'),
+    path('logout/', views.logout, name='logout'),    
     #----
 ]

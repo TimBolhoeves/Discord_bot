@@ -25,6 +25,16 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
+# @login_required
+# def discordBot(request):
+#     if request.method == 'POST':
+#         boolean = request.POST['boolean']
+        
+#         if boolean == True:
+#             # Zet de bot aan (code van bot.py)
+#             return ""
+#         else:
+#             # Zet bot uit
 
 # -----------------------------
 # Auth
