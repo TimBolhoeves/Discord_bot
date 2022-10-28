@@ -1,0 +1,33 @@
+{% extends 'includes/header.html' %}
+{% block content %}
+<div class="container mt-5 p-5 border rounded border-dark bg-white">
+    <h2> <i class="fa fa-user" aria-hidden="true"></i> Login</h2>
+
+    <form action="post/" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{message}}
+                    <span class="closebtn drag-right" onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+        </div>
+
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+{% endblock %}

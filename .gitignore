@@ -12,3 +12,4 @@ pyvenv.cfg
 /CODE_OF_CONDUCT.md
 /CONTRIBUTING.md
 /LICENSE
+__pycache__
