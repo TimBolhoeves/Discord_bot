@@ -10,9 +10,9 @@ from datetime import date, datetime
 from django.views.csrf import *
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User, auth
-
 from .models import DiscordBot
 
+from app.bots.bot1 import turnOn
 
 today = datetime.now()
 today_format = today.strftime("%b. %d, %Y")
@@ -20,22 +20,35 @@ today_format = today.strftime("%b. %d, %Y")
 # Create your views here.
 @login_required
 def index(request):
+    discord_bots = DiscordBot.objects.all().values()
     context = {
+        'discord_bots': discord_bots,
         'today': today_format,
     }
     return render(request, 'index.html', context)
 
-# @login_required
-# def discordBot(request):
-#     if request.method == 'POST':
-#         boolean = request.POST['boolean']
-        
-#         if boolean == True:
-#             # Zet de bot aan (code van bot.py)
-              #messages.info(request, 'Bot is aangezet')
-#             return void
-#         else:
-#             # Zet bot uit
+@login_required
+def botOn(request, id):
+    discord_bot = DiscordBot.objects.get(id=id)
+
+    discord_bot.running = True
+    discord_bot.save()
+
+    # code here to run the bot, when you run it now using the turnOn() function, the terminal will halt and you will get an infinte loading page
+
+    return HttpResponseRedirect(reverse('index'))
+
+@login_required
+def botOff(request, id):
+    discord_bot = DiscordBot.objects.get(id=id)
+
+    discord_bot.running = False
+    discord_bot.save()
+
+    # code here to turn the bot off,
+    # possible fix: https://stackoverflow.com/questions/54561531/how-would-i-create-a-command-to-shutdown-my-discord-py-bot
+
+    return HttpResponseRedirect(reverse('index'))
 
 # -----------------------------
 # Auth

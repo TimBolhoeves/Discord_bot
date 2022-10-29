@@ -10,11 +10,44 @@
     {% endfor %}
 
     <h1>Discord bot config
-        <small class="text-muted">| Today: {{today}} |</small>
+        <small class="text-muted">| Today: {{today}}</small>
     </h1>
-    <hr>
+    <br>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Status</th>
+            <th scope="col">Updated at</th>
+            <th scope="col">On/Off</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for bot in discord_bots %}
+                <tr>
+                    <th scope="row">{{bot.id}}</th>
+                    <td>{{bot.name}}</td>
+                    {% if bot.running == True %}
+                        <td>Running</td>
+                    {% else %}
+                        <td>Off</td>
+                    {% endif %}
 
-    {% comment %} Main code here {% endcomment %}
+                    <td>{{bot.updated_at}}</td>
+
+                    {% if bot.running == True %}
+                    {% comment %} turn the bot off {% endcomment %}
+                        <td><a href="{% url 'botOff' bot.id %}">Turn Off</a></td>
+                    {% else %}
+                    {% comment %} turn the bot on {% endcomment %}
+                        <td><a href="{% url 'botOn' bot.id %}">Turn On</a></td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+      
 
 </div>
 {% endblock %}
